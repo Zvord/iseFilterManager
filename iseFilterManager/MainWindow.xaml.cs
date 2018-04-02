@@ -55,7 +55,16 @@ namespace iseFilterManager
 
         private void LoadWarnings(string filename)
         {
-            string content = File.ReadAllText(filename);
+            string content;
+            try
+            {
+                content = File.ReadAllText(filename);
+            }
+            catch
+            {
+                MessageBox.Show("Wait until synthesis is complete");
+                return;
+            }
             Warnings = ReportParser.Main(content);
             LabelCount.Content = "Total warnings: " + Warnings.Count.ToString();
             Table.ItemsSource = Warnings;
