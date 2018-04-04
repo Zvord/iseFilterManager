@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="WindowInputFilter" Height="172.5" Width="243.5">
     <Grid Background="#FFE2E2E2" Height="140">
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="22" Margin="98,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="22" Margin="98,10,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" MaxLines="1"/>
         <Label Content="Argument 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Argument 2" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="22" Margin="98,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="22" Margin="98,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="22" Margin="98,38,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="22" Margin="98,66,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label Content="Argument 3" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,104,0,0" Click="ButtonOK_Click"/>
         <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="143,104,0,0" Click="ButtonCancel_Click"/>

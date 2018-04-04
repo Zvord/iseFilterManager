@@ -120,7 +120,11 @@ namespace iseFilterManager
             if (Filters.Count > 0)
                 xz = filter == Filters[0];
             if (!Filters.Contains(filter))
+            {
                 Filters.Add(filter);
+                if (CheckBoxFilters.IsChecked == true)
+                    FilterList();
+            }
         }
 
         private void EditItem_Click(object sender, RoutedEventArgs e)
@@ -153,7 +157,7 @@ namespace iseFilterManager
             TableFilters.Width = wTable;
         }
 
-        private void CheckBoxFilters_Checked(object sender, RoutedEventArgs e)
+        private void FilterList()
         {
             if (Warnings == null || Filters == null)
                 return;
@@ -162,12 +166,38 @@ namespace iseFilterManager
             LabelCount.Content = "Total warnings: " + filtered.Count.ToString();
         }
 
+        private void CheckBoxFilters_Checked(object sender, RoutedEventArgs e)
+        {
+            FilterList();
+        }
+
         private void CheckBoxFilters_Unchecked(object sender, RoutedEventArgs e)
         {
             if (Warnings == null || Filters == null)
                 return;
             Table.ItemsSource = Warnings;
             LabelCount.Content = "Total warnings: " + Warnings.Count.ToString();
+        }
+
+        private void DisableItem_Click(object sender, RoutedEventArgs e)
+        {
+            Filter selected = TableFilters.SelectedItem as Filter;
+            selected.Enabled ^= true;
+            TableFilters.Items.Refresh();
+            if (CheckBoxFilters.IsChecked == true)
+                FilterList();
+        }
+
+        private void TableFilters_ContextMenuOpening(object sender, System.Windows.Controls.ContextMenuEventArgs e)
+        {
+            var menuItem = TableFilters.ContextMenu.Items[1] as System.Windows.Controls.MenuItem;
+            Filter selected = TableFilters.SelectedItem as Filter;
+            if (selected == null)
+                return;
+            if (selected.Enabled == true)
+                menuItem.Header = "Disable";
+            else
+                menuItem.Header = "Enable";
         }
     }
 }

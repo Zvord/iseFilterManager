@@ -23,7 +23,7 @@ namespace iseFilterManager
         public Warning(string input)
         {
             Regex numberSourceRegex = new Regex(@"<msg type=""warning"" file=""(\w+)"" num=""(\d+)"".*?>");
-            Regex bodyRegex = new Regex(@"<msg.*?>(.*)\n</msg>");
+            Regex bodyRegex = new Regex(@"<msg.*?>(.*)\r\n</msg>");
             Regex argumentRegex = new Regex(@"<arg fmt=""%\w"" index=""(\d+)"">(.*?)</arg>");
             Match match = numberSourceRegex.Match(input);
             Source = match.Groups[1].Value;

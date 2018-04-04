@@ -17,13 +17,26 @@
         </DataGrid>
         <Label x:Name="LabelCount" Content="Project not loaded" HorizontalAlignment="Left" Margin="137,10,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonSaveFilter" Content="Save filters" Margin="0,13,10,0" VerticalAlignment="Top" Click="ButtonSaveFilter_Click" HorizontalAlignment="Right" Width="75"/>
-        <DataGrid x:Name="TableFilters" Margin="0,38,10,10" HorizontalAlignment="Right" Width="435" IsReadOnly="True">
+        <DataGrid x:Name="TableFilters" Margin="0,38,10,10" HorizontalAlignment="Right" Width="435" IsReadOnly="True" ContextMenuOpening="TableFilters_ContextMenuOpening" SelectionMode="Single">
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Edit" Click="EditItem_Click"/>
+                    <MenuItem Header="Disable" Click="DisableItem_Click"/>
                     <MenuItem Header="Delete" Click="DeleteItem_Click"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Enabled}" Value="true">
+                            <Setter Property="Background" Value="White"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Enabled}" Value="false">
+                            <Setter Property="Background" Value="LightGray"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
         </DataGrid>
         <CheckBox x:Name="CheckBoxFilters" Content="Apply filters" Margin="0,16,103,0" Checked="CheckBoxFilters_Checked" Unchecked="CheckBoxFilters_Unchecked" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Width="97"/>
 

@@ -13,6 +13,7 @@ namespace iseFilterManager
         private List<string> arguments;
         public string ArgumentsString { get; set; }
         public string Full { get; set; }
+        public bool Enabled { get; set; }
         public List<string> Arguments
         {
             get { return arguments; }
@@ -31,6 +32,7 @@ namespace iseFilterManager
 
         public Filter(string source, int number, List<string> arguments)
         {
+            Enabled = true;
             Source = source;
             Number = number;
             Arguments = arguments;
@@ -44,6 +46,7 @@ namespace iseFilterManager
         /// <param name="input"></param>
         public Filter(string input)
         {
+            Enabled = true;
             Match m = SourceNumberRegex.Match(input);
             Source = m.Groups[1].Value;
             Number = Convert.ToInt32(m.Groups[2].Value);
@@ -120,6 +123,9 @@ namespace iseFilterManager
 
         private bool Apply(Warning warning)
         {
+            if (Enabled == false)
+                return false;
+
             bool valid = true;
             if (arguments.Count != warning.Arguments.Count)
                 throw new Exception("Different number of arguments");
