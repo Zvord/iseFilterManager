@@ -37,7 +37,7 @@ namespace iseFilterManager
             if (TextBox2.IsEnabled)
                 args.Add(TextBox2.Text);
             if (TextBox3.IsEnabled)
-                args.Add(TextBox2.Text);
+                args.Add(TextBox3.Text);
 
             ((MainWindow)Application.Current.MainWindow).DialogTuple = new Tuple<bool, List<string>>(true, args);
 
