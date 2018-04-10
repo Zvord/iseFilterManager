@@ -16,7 +16,7 @@ namespace iseFilterManager
         /// <returns></returns>
         static List<string> TextGetter(string input)
         {
-            Regex rx = new Regex(@"<msg type=""warning"".*?>(.*)(\n)?</msg>");
+            Regex rx = new Regex(@"<msg type=""warning"".*?>(.*?)</msg>", RegexOptions.Singleline);
             var matches = rx.Matches(input);
             List<string> list = new List<string>();
             foreach (Match m in matches)
