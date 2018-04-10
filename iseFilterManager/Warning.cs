@@ -44,7 +44,9 @@ namespace iseFilterManager
             string cleanArgs = argumentRegex.Replace(body, m => m.Groups[2].Value);
             string cleanLess = cleanArgs.Replace("&lt;", "<");
             string cleanGreater = cleanLess.Replace("&gt;", ">");
-            Full = cleanGreater;
+            string cleanApos = cleanGreater.Replace("&apos;", "'");
+            string cleanQuotes = cleanApos.Replace("&quot;", "\"");
+            Full = cleanQuotes;
         }
 
     }

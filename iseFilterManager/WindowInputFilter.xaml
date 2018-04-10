@@ -5,15 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:iseFilterManager"
         mc:Ignorable="d"
-        Title="WindowInputFilter" Height="172.5" Width="243.5">
-    <Grid Background="#FFE2E2E2" Height="140">
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="22" Margin="98,10,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" MaxLines="1"/>
-        <Label Content="Argument 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Argument 2" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="22" Margin="98,38,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="22" Margin="98,66,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <Label Content="Argument 3" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,104,0,0" Click="ButtonOK_Click"/>
-        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="143,104,0,0" Click="ButtonCancel_Click"/>
+        Title="WindowInputFilter" Height="223.166" Width="304.167">
+    <Grid Background="#FFE2E2E2" Margin="0,0,0,-1">
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="22" Margin="98,10,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False" MaxLines="1"/>
+        <Label Content="Argument 1" HorizontalAlignment="Left" Margin="20,7,0,0" VerticalAlignment="Top"/>
+        <Label Content="Argument 2" HorizontalAlignment="Left" Margin="20,33,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="22" Margin="98,37,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False"/>
+        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="22" Margin="98,64,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False"/>
+        <Label Content="Argument 3" HorizontalAlignment="Left" Margin="20,61,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,156,0,0" Click="ButtonOK_Click"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="208,156,0,0" Click="ButtonCancel_Click"/>
+        <Label Content="Argument 4" HorizontalAlignment="Left" Margin="20,87,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox4" HorizontalAlignment="Left" Height="22" Margin="98,91,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False"/>
+        <TextBox x:Name="TextBox5" HorizontalAlignment="Left" Height="22" Margin="98,118,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False"/>
+        <Label Content="Argument 5" HorizontalAlignment="Left" Margin="20,114,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -27,6 +27,16 @@ namespace iseFilterManager
                 TextBox3.IsEnabled = true;
                 TextBox3.Text = args[2];
             }
+            if (args.Count >= 4)
+            {
+                TextBox4.IsEnabled = true;
+                TextBox4.Text = args[3];
+            }
+            if (args.Count >= 5)
+            {
+                TextBox5.IsEnabled = true;
+                TextBox5.Text = args[4];
+            }
         }
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
@@ -38,6 +48,10 @@ namespace iseFilterManager
                 args.Add(TextBox2.Text);
             if (TextBox3.IsEnabled)
                 args.Add(TextBox3.Text);
+            if (TextBox4.IsEnabled)
+                args.Add(TextBox4.Text);
+            if (TextBox5.IsEnabled)
+                args.Add(TextBox5.Text);
 
             ((MainWindow)Application.Current.MainWindow).DialogTuple = new Tuple<bool, List<string>>(true, args);
 

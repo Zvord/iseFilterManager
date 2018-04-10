@@ -131,7 +131,7 @@ namespace iseFilterManager
                 throw new Exception("Different number of arguments");
             for (int i = 0; i < arguments.Count; i++)
             {
-                string better = arguments[i].Replace("*", ".*");
+                string better = arguments[i].Replace("*", ".*").Replace(@"\", @"\\");
                 Regex regex = new Regex(better);
                 valid &= regex.IsMatch(warning.Arguments[i]);
             }
