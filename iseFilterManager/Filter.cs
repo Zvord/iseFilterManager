@@ -14,6 +14,7 @@ namespace iseFilterManager
         public string ArgumentsString { get; set; }
         public string Full { get; set; }
         public bool Enabled { get; set; }
+        public int NumberOfMatches { get; set; }
         public List<string> Arguments
         {
             get { return arguments; }
@@ -36,6 +37,7 @@ namespace iseFilterManager
             Source = source;
             Number = number;
             Arguments = arguments;
+            NumberOfMatches = 0;
             UpdateFull();
             UpdateArgumentsString();
         }
@@ -111,7 +113,10 @@ namespace iseFilterManager
             foreach (Filter f in filts)
             {
                 if (f.Apply(warn) == true)
+                {
+                    f.NumberOfMatches++;
                     return true;
+                }
             }
             return false;
         }
