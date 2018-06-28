@@ -138,7 +138,9 @@ namespace iseFilterManager
             {
                 string better = arguments[i].Replace("*", ".*").Replace(@"\", @"\\");
                 Regex regex = new Regex(better);
-                valid &= regex.IsMatch(warning.Arguments[i]);
+                var match = regex.Match(warning.Arguments[i]);
+                valid &= match.Value == warning.Arguments[i]; // regex should cover all message
+                //valid &= regex.IsMatch(warning.Arguments[i]);
             }
             return valid;
         }
